@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "google/protobuf/empty.proto";
 import "google/protobuf/timestamp.proto";
+import "status.proto";
 
 package pb;
 
@@ -9,8 +10,9 @@ service TodoService {
     rpc List(google.protobuf.Empty) returns (TodoList) {}
     rpc Get(TodoIdentifier) returns (Todo) {}
     rpc Create(TodoCreate) returns (Todo) {}
+    // id, created_at ignored
     rpc Update(Todo) returns (Todo) {}
-    rpc Delete(TodoIdentifier) returns (TodoList) {}
+    rpc Delete(TodoIdentifier) returns (Status) {}
 }
 
 message Todo {

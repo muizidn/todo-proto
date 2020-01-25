@@ -1,0 +1,10 @@
+syntax="proto3";
+
+// https://cloud.google.com/apis/design/errors
+
+package pb;
+
+message Status {
+    int32 code = 1;
+    string message = 2;
+}
